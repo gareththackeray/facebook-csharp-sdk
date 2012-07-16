@@ -506,7 +506,7 @@ namespace Facebook
         protected WebExceptionWrapper() { }
 
         public WebExceptionWrapper(WebException webException)
-            : base(webException == null ? null : webException.Message, webException == null ? null : webException.InnerException)
+            : base(webException == null ? null : webException.Message, webException)
         {
             _webException = webException;
             _status = webException == null ? WebExceptionStatus.UnknownError : webException.Status;

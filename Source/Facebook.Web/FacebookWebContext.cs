@@ -83,17 +83,6 @@ namespace Facebook.Web
         }
 
         /// <summary>
-        /// Gets the current Facebook web context.
-        /// </summary>
-        public static FacebookWebContext Current
-        {
-            get
-            {
-                return new FacebookWebContext();
-            }
-        }
-
-        /// <summary>
         /// Gets the Facebook application settings.
         /// </summary>
         public IFacebookApplication Settings
@@ -276,7 +265,7 @@ namespace Facebook.Web
         /// <returns>
         /// The list of permissions that are allowed from the specified permissions.
         /// </returns>
-        internal static string[] HasPermissions(string accessToken, string appId, long userId, string[] permissions)
+        internal string[] HasPermissions(string accessToken, string appId, long userId, string[] permissions)
         {
             if (string.IsNullOrEmpty(appId))
                 throw new ArgumentNullException("appId");
@@ -287,7 +276,7 @@ namespace Facebook.Web
             {
                 try
                 {
-                    var fb = new FacebookWebClient(accessToken);
+                    var fb = new FacebookWebClient(this);
                     var remoteResult = ((IDictionary<string, object>)fb.Get("me/permissions"));
                     if (remoteResult != null && remoteResult.ContainsKey("data"))
                     {

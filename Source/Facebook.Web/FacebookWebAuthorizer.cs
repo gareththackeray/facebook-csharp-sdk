@@ -17,15 +17,7 @@ namespace Facebook.Web
     public class FacebookWebAuthorizer
     {
         private readonly FacebookWebContext _request;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookWebAuthorizer"/> class.
-        /// </summary>
-        public FacebookWebAuthorizer() :
-            this(FacebookWebContext.Current)
-        {
-        }
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="FacebookWebAuthorizer"/> class.
         /// </summary>

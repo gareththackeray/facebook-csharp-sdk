@@ -55,18 +55,7 @@ namespace Facebook
 
             AccessToken = accessToken;
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookApp"/> class.
-        /// </summary>
-        /// <param name="accessToken">
-        /// The access token.
-        /// </param>
-        public FacebookApp(string accessToken)
-            : this(FacebookWebContext.Current, accessToken)
-        {
-        }
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="FacebookApp"/> class.
         /// </summary>
@@ -90,55 +79,7 @@ namespace Facebook
             AppSecret = FacebookApplication.Current.AppSecret;
             AppId = FacebookApplication.Current.AppId;
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookApp"/> class.
-        /// </summary>
-        public FacebookApp()
-            : this(FacebookWebContext.Current)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookApp"/> class.
-        /// </summary>
-        /// <param name="appId">
-        /// The app id.
-        /// </param>
-        /// <param name="appSecret">
-        /// The app secret.
-        /// </param>
-        public FacebookApp(string appId, string appSecret)
-            : this(FacebookWebContext.Current)
-        {
-            if (string.IsNullOrEmpty(appId))
-                throw new ArgumentNullException("appId");
-            if (string.IsNullOrEmpty(appSecret))
-                throw new ArgumentNullException("appSecret");
-
-            AppId = appId;
-            AppSecret = appSecret;
-            AccessToken = string.Concat(appId, "|", appSecret);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookApp"/> class.
-        /// </summary>
-        /// <param name="facebookApplication">
-        /// The facebook application.
-        /// </param>
-        public FacebookApp(IFacebookApplication facebookApplication)
-            : this(FacebookWebContext.Current)
-        {
-            if (facebookApplication != null)
-            {
-                if (!string.IsNullOrEmpty(facebookApplication.AppId) && !string.IsNullOrEmpty(facebookApplication.AppSecret))
-                {
-                    this.AccessToken = string.Concat(facebookApplication.AppId, "|", facebookApplication.AppSecret);
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Gets or sets the Application ID.
         /// </summary>

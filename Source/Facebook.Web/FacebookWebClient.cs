@@ -20,62 +20,7 @@ namespace Facebook.Web
         private FacebookWebContext _request;
 
         private bool _isSecureConnection;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookWebClient"/> class.
-        /// </summary>
-        public FacebookWebClient()
-            : this(FacebookWebContext.Current)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookWebClient"/> class.
-        /// </summary>
-        /// <param name="accessToken">
-        /// The access token.
-        /// </param>
-        public FacebookWebClient(string accessToken)
-            : base(accessToken)
-        {
-            if (string.IsNullOrEmpty(accessToken))
-                throw new ArgumentNullException("accessToken");
-
-            Initialize(FacebookWebContext.Current);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookWebClient"/> class.
-        /// </summary>
-        /// <param name="appId">
-        /// The app id.
-        /// </param>
-        /// <param name="appSecret">
-        /// The app secret.
-        /// </param>
-        public FacebookWebClient(string appId, string appSecret)
-            : base(appId, appSecret)
-        {
-            if (string.IsNullOrEmpty(appId))
-                throw new ArgumentNullException("appId");
-            if (string.IsNullOrEmpty(appSecret))
-                throw new ArgumentNullException("appSecret");
-
-            Initialize(FacebookWebContext.Current);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FacebookWebClient"/> class.
-        /// </summary>
-        /// <param name="facebookApplication">
-        /// The Facebook application.
-        /// </param>
-        public FacebookWebClient(IFacebookApplication facebookApplication)
-            : base(facebookApplication)
-        {
-            Initialize(FacebookWebContext.Current);
-        }
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="FacebookWebClient"/> class.
         /// </summary>

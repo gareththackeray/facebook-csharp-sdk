@@ -21,14 +21,6 @@ namespace Facebook.Web
         /// <summary>
         /// Initializes a new instance of the <see cref="CanvasAuthorizer"/> class. 
         /// </summary>
-        public CanvasAuthorizer()
-            : base(FacebookWebContext.Current)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CanvasAuthorizer"/> class. 
-        /// </summary>
         /// <param name="context">The <see cref="FacebookWebContext"/></param>
         public CanvasAuthorizer(FacebookWebContext context)
             : base(context)

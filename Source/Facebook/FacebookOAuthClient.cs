@@ -548,7 +548,7 @@ namespace Facebook
             catch (WebExceptionWrapper ex)
             {
                 if (ex.GetResponse() == null)
-                    throw;
+                    throw ex.ActualWebException;
 
                 responseStream = httpHelper.OpenRead();
             }
